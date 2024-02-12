@@ -1,0 +1,20 @@
+import {Separator} from "@/components/Separator";
+
+export const Skills = ({data}: { data: string[] }) => {
+    return (
+        <>
+            <Separator/>
+            <div className="space-y-2">
+                <h1 className="font-bold text-lg">SKILL</h1>
+                <p>
+                    {data.map((item, index) => (
+                        <>
+                            {item}
+                            {index < data.length - 1 && ', '}
+                        </>
+                    ))}
+                </p>
+            </div>
+        </>
+    );
+};
