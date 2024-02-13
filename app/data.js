@@ -3,7 +3,6 @@ const data = {
 
     "province": "Jawa Tengah",
     "city": "Purwokerto",
-    "address": "XXXXXXX Rt 2 Rw 6",
     "postalCode": "12345",
 
     "phone": "081228888888",
