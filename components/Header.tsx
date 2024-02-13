@@ -1,6 +1,8 @@
-import data from "@/app/data";
+'use client'
 
-export const Header = () => {
+import DataType from "@/types/data";
+
+export const Header = ({ data }: { data: DataType }) => {
     return (
         <>
             <div className="space-y-3">

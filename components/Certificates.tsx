@@ -1,12 +1,14 @@
-import {Sorting} from "@/app/sorting";
-import {Separator} from "@/components/Separator";
-import {convertDate} from "@/app/convertDate";
+'use client'
+
+import { Sorting } from "@/app/sorting";
+import { Separator } from "@/components/Separator";
+import { convertDate } from "@/app/convertDate";
 import CertificateType from "@/types/certificate";
 
-export const Certificates = ({data}: { data: CertificateType }) => {
+export const Certificates = ({ data }: { data: CertificateType }) => {
     return (
         <>
-            <Separator/>
+            <Separator />
             <div className="space-y-2">
                 <h1 className="font-bold text-lg">SERTIFIKAT</h1>
                 <div className="space-y-3">

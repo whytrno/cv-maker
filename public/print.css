@@ -12,9 +12,13 @@
     }
 }
 
-
-@page :left {
+@media print {
+    #toolbar {
+        display: none;
+    }
 }
+
+@page :left {}
 
 @page :right {
     margin-left: 40cm;

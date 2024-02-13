@@ -1,12 +1,15 @@
-import {Sorting} from "@/app/sorting";
-import {Separator} from "@/components/Separator";
-import {convertDate} from "@/app/convertDate";
+'use client'
+
+
+import { Sorting } from "@/app/sorting";
+import { Separator } from "@/components/Separator";
+import { convertDate } from "@/app/convertDate";
 import OrganizationType from "@/types/organization";
 
-export const Organizations = ({data}: { data: OrganizationType }) => {
+export const Organizations = ({ data }: { data: OrganizationType }) => {
     return (
         <>
-            <Separator/>
+            <Separator />
             <div className="space-y-2">
                 <h1 className="font-bold text-lg">Organisasi</h1>
                 <div className="space-y-4">

@@ -1,50 +1,39 @@
 'use client'
 
-import {About} from "@/components/About";
-import {Header} from "@/components/Header";
-import data from "@/app/data";
-import {useEffect} from "react";
-import {Experiences} from "@/components/Experiences";
-import {Educations} from "@/components/Educations";
-import {Awards} from "@/components/Awards";
-import {Organizations} from "@/components/Organizations";
-import {Certificates} from "@/components/Certificates";
-import {Skills} from "@/components/Skills";
-import {Projects} from "@/components/Projects";
-import "./print.css";
+import CvPage from "@/components/Cv";
+import rawData from "./data";
+import { useEffect, useRef, useState } from "react";
+import Toolbar from "@/components/Toolbar";
+import "@/public/print.css";
 
 export default function Home() {
-    useEffect(() => {
-        console.log(typeof data.about)
-    }, [])
+    const [data, setData] = useState(rawData);
+    const [preview, setPreview] = useState(false);
+
+    const handleChange = (e: { target: { value: string; }; }) => {
+        try {
+            const updated = JSON.parse(e.target.value);
+            setData(updated);
+        } catch {
+            setData(data);
+        }
+    }
+
     return (
-        <main className="p-14 text-slate-700 space-y-4 bg-white">
-            {/*HEADER*/}
-            <Header/>
+        <>
+            {preview ? <CvPage data={data} /> : (
+                <div className="flex gap-10 relative">
+                    <div className="relative w-[40%]">
+                        <textarea className="fixed top-0 left-0 w-[40%] h-screen overflow-auto text-black p-5" value={JSON.stringify(data, null, 2)}
+                            onChange={handleChange} />
+                    </div>
+                    <div className="w-[60%]">
+                        <CvPage data={data} />
+                    </div>
 
-            {/*TENTANG SAYA*/}
-            <About about={data.about}/>
-
-            {/*PENGALAMAN*/}
-            <Experiences data={data.experiences}/>
-
-            {/*PENDIDIKAN*/}
-            <Educations data={data.educations}/>
-
-            {/*PENGHARGAAN*/}
-            <Awards data={data.awards}/>
-
-            {/*ORGANISASI*/}
-            <Organizations data={data.organizations}/>
-
-            {/*SERTIFIKAT*/}
-            <Certificates data={data.certificates}/>
-
-            {/*SKILL*/}
-            <Skills data={data.skills}/>
-
-            {/*PROJEK*/}
-            <Projects data={data.projects}/>
-        </main>
+                </div>
+            )}
+            <Toolbar preview={preview} setPreview={setPreview} />
+        </>
     )
 }

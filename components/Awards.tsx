@@ -1,12 +1,14 @@
-import {Sorting} from "@/app/sorting";
-import {Separator} from "@/components/Separator";
-import {convertDate} from "@/app/convertDate";
+'use client'
+
+import { Sorting } from "@/app/sorting";
+import { Separator } from "@/components/Separator";
+import { convertDate } from "@/app/convertDate";
 import AwardType from "@/types/award";
 
-export const Awards = ({data}: { data: AwardType }) => {
+export const Awards = ({ data }: { data: AwardType }) => {
     return (
         <>
-            <Separator/>
+            <Separator />
             <div className="space-y-2">
                 <h1 className="font-bold text-lg">PENGHARGAAN</h1>
                 <div className="space-y-4">

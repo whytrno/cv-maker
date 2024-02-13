@@ -1,19 +1,21 @@
-import {Separator} from "@/components/Separator";
+'use client'
 
-export const Skills = ({data}: { data: string[] }) => {
+import { Separator } from "@/components/Separator";
+
+export const Skills = ({ data }: { data: string[] }) => {
     return (
         <>
-            <Separator/>
+            <Separator />
             <div className="space-y-2">
                 <h1 className="font-bold text-lg">SKILL</h1>
-                <p>
+                <div>
                     {data.map((item, index) => (
-                        <>
+                        <div key={index}>
                             {item}
                             {index < data.length - 1 && ', '}
-                        </>
+                        </div>
                     ))}
-                </p>
+                </div>
             </div>
         </>
     );

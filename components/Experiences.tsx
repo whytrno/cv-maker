@@ -1,16 +1,18 @@
-import {Sorting} from "@/app/sorting";
-import {Separator} from "@/components/Separator";
+'use client'
+
+import { Sorting } from "@/app/sorting";
+import { Separator } from "@/components/Separator";
 import ExperienceType from "@/types/experience";
-import {convertDate} from "@/app/convertDate";
+import { convertDate } from "@/app/convertDate";
 
 interface ExperiencesProps {
     data: null
 }
 
-export const Experiences = ({data}: { data: ExperienceType }) => {
+export const Experiences = ({ data }: { data: ExperienceType }) => {
     return (
         <>
-            <Separator/>
+            <Separator />
             <div className="space-y-2">
                 <h1 className="font-bold text-lg">PENGALAMAN</h1>
                 <div className="space-y-4">

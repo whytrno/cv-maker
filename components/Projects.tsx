@@ -1,12 +1,14 @@
-import {Sorting} from "@/app/sorting";
-import {Separator} from "@/components/Separator";
-import {convertDate} from "@/app/convertDate";
+'use client'
+
+import { Sorting } from "@/app/sorting";
+import { Separator } from "@/components/Separator";
+import { convertDate } from "@/app/convertDate";
 import ProjectType from "@/types/project";
 
-export const Projects = ({data}: { data: ProjectType }) => {
+export const Projects = ({ data }: { data: ProjectType }) => {
     return (
-        <>
-            <Separator/>
+        <div>
+            <Separator />
             <div className="space-y-2">
                 <h1 className="font-bold text-lg">PROJEK</h1>
                 <div className="space-y-4">
@@ -24,6 +26,6 @@ export const Projects = ({data}: { data: ProjectType }) => {
                     ))}
                 </div>
             </div>
-        </>
+        </div>
     );
 };
